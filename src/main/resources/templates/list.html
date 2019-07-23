@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<div th:replace="base :: navlinks"></div>
+<h2>List Page</h2>
+    <a href="/add"> Add a Message</a>
+    <table>
+        <tr>
+            <th>Message</th>
+            <th>Sent By</th>
+            <th>Posted Date</th>
+        </tr>
+        <tr th:each = "msg: ${msgs}">
+            <td th:text="${msg.content}"></td>
+            <td th:text="${msg.sentBy}"></td>
+            <td th:text="${msg.postedDate}"></td>
+            <td>
+                <a th:href="@{/update/{id}(id = ${msg.id})}">UPDATE</a>
+                <a th:href="@{/detail/{id}(id = ${msg.id})}">DETAILS</a>
+                <a th:href="@{/delete/{id}(id = ${msg.id})}">DELETE</a>
+            </td>
+
+        </tr>
+    </table>
+<div th:replace="base :: footer"></div>
+</body>
+</html>

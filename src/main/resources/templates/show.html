@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+
+<div th:replace="base :: navlinks"></div>
+<h2>Show Page</h2>
+
+<a href="/">SHOW ALL MESSAGE LISTS</a><br/>
+
+Message: <span th:text="${msg.content}"></span><br/>
+Name: <span th:text="${msg.sentBy}"></span><br/>
+Posted Date: <span th:text="${msg.postedDate}"></span><br/>
+Description: <span th:text="${msg.description}"></span><br/>
+
+<a th:href="@{/delete/{id}(id = ${msg.id})}">Delete this message</a>
+
+<div th:fragment="footer">Copyright &copy 2019</div>
+</body>
+</html>
