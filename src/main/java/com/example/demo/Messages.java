@@ -24,6 +24,8 @@ public class Messages {
     @NotNull
     private String sentBy;
 
+    private String headshot;
+
     @NotNull
     @Size(min=10)
     private String description;
@@ -67,5 +69,13 @@ public class Messages {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getHeadshot() {
+        return headshot;
+    }
+
+    public void setHeadshot(String headshot) {
+        this.headshot = headshot;
     }
 }

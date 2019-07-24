@@ -7,10 +7,11 @@
 <body>
 <div th:replace="base :: navlinks"></div>
 <h2>Message Form</h2>
-<form action="#"
+<form action="/add"
       th:action = "@{/process}"
       th:object = "${msg}"
-      method = "post">
+      method = "post"
+enctype="multipart/form-data">
 
     Full Name: <input type = "text" th:field = "*{sentBy}"/>
                 <span th:if = "${#fields.hasErrors('sentBy')}"
@@ -27,6 +28,8 @@
     Description: <input textarea rows="3" th:field = "*{description}"/>
                 <span th:if = "${#fields.hasErrors('description')}"
                       th:errors = "*{description}"></span><br/>
+
+    <input type="file" name="file"/><br/><br/>
 
     <input type = "submit" value = "Submit"/>
 

@@ -8,7 +8,7 @@
         <div th:fragment = "navlinks">
             <a href="/">List</a>
             <a href="/add">Message Form</a>
-            <a href="/detail/{id}">Show</a>
+            <!-- <a th:href="@{/detail/{id}(id = ${msg.id})}">Show</a> -->
         </div>
 
         <div th:fragment="footer">Copyright &copy 2019</div>
